@@ -58,8 +58,24 @@ public class ScreenRestController {
 	}
 	
 	
-	
+	@GetMapping("/{screenId}")
+	public ResponseEntity<ScreenBean> getScreen(@PathVariable int screenId) {
+
+		
+		  try {
+			  ScreenBean bean= screenService.getScreenById(screenId);
+		   ResponseEntity<ScreenBean> responseEntity = new ResponseEntity(bean,HttpStatus.OK); 
+		   System.out.println("response entity=" + responseEntity);
+		    return responseEntity; 
+		  } 
+		  catch(Exception e) 
+		  {
+		  
+		  System.err.println("Invalid ScreenId"); 
+		  return new ResponseEntity("Invalid Screen Id",HttpStatus.BAD_REQUEST);
 	
 	
 
+}
+	}
 }

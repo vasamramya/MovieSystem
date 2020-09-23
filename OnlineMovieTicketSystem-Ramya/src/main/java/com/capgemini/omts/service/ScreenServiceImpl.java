@@ -52,5 +52,15 @@ public class ScreenServiceImpl implements IScreenService {
 		
 		return screenRepo.findAll();
 	}
-
+	@Override
+	public ScreenBean getScreenById(int screenId) {
+		if(screenRepo.findById(screenId).isPresent()) {
+		System.out.println(screenId);
+		
+		}
+		else {
+			throw new ScreenException("id not found");
+		}
+		return screenRepo.findById(screenId).get();
+	}
 }

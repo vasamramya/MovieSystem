@@ -11,4 +11,6 @@ public interface IScreenService {
 	public boolean deleteScreen(int screenId);
 
 	public List<ScreenBean> getAllScreens();
+	
+	public ScreenBean getScreenById(int ScreenId);
 }
