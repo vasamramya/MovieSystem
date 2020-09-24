@@ -27,21 +27,7 @@ class OnlineMovieTicketSystemRamyaApplicationTests {
 	@MockBean
 	private ScreenRepo screenRepo;
 
-	@Test
-	public void addScreenTest() {
-		ScreenBean bean = mock(ScreenBean.class);
-		screenService.addScreen(bean);
-		verify(screenRepo).saveAndFlush(bean);
-
-	}
-
-	@Test
-	public void getAllScreensTest() {
-		screenService.getAllScreens();
-		verify(screenRepo).findAll();
-
-	}
-
+	
 	@Test
 	public void testAddScreen() {
 		ScreenBean bean = new ScreenBean();
